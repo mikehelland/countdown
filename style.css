@@ -85,7 +85,7 @@ html, body {
 .letter {
     display: inline-block;
     vertical-align: middle;
-    padding: 5px;
+    padding: 5px 0;
     width:30px;
 }
 
