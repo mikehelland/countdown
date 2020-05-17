@@ -76,8 +76,23 @@ function startCountdown () {
         //clock.style.transform = "rotate(" + deg + "deg)"
         if (deg === 180) {
             clearInterval(handle)
+            nextButton.style.display = "block"
         }
     }, 500)
+}
+
+var game = 0
+var nextButton = document.getElementById("next-round-button")
+nextButton.onclick = e => {
+    if (game) {
+        startLetters()
+        game = 0
+    }
+    else {
+        startNumbers()
+        game++
+    }
+    nextButton.style.display = "none"
 }
 
 var numbersGame = document.getElementById("numbers-game")
@@ -99,5 +114,17 @@ function startNumbers() {
     targetNumberDiv.onclick = e => {
         targetNumberDiv.innerHTML = 100 + Math.ceil(Math.random() * 800)
         startCountdown()
+    }
+}
+
+function startLetters() {
+    clockHand.style.display = "none"
+    lettersGame.style.display = "block"
+    numbersGame.style.display = "none"
+    buttons.style.display = "block"
+
+    letters = []
+    for (var i = 0; i < letterDivs.length; i++) {
+        letterDivs[i].innerHTML = "&nbsp;"
     }
 }
