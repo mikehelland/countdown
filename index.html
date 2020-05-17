@@ -1,19 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <title> </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="vue.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <body>
-      <iframe class="timer" src="https://www.youtube.com/embed/M2dhD9zR6hk" frameborder="0" allowfullscreen></iframe>
-      <div class="letter-board-outer">
-        <div class="letter-board" tabindex="0" id="letter-board" @keyup.86="add('vowel')" @keyup.67="add('consonant')" @keyup.82="reset()">
-            <div v-for="index in 9" class="letter-box">
-                <div class="letter">{{ letters[index-1] ? letters[index-1] : null }}</div>
-            </div>
-        </div>
-        </div>
+<title> </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<body>
+  <div id="flex-body">
+    <!--<iframe class="timer" src="https://www.youtube.com/embed/M2dhD9zR6hk" frameborder="0" allowfullscreen></iframe>-->
+
+    <img id="clock" src="clock2.png">
+    
+    <div id="letters-game" class="letter-board-outer">
+
+      <div id="button-box" class="letter-board">
+      <div id="vowel-button" class="option-box">
+        Vowel
       </div>
-    <script src="countdown.js"></script>
-  </body>
+
+      <div id="consonant-button" class="option-box">
+        Consonant
+      </div>
+      </div>
+
+      <div class="letter-board" id="letter-board">
+        <div class="letter-box">
+          <div class="letter">&nbsp;</div>
+        </div>
+        <div class="letter-box">
+          <div class="letter">&nbsp;</div>
+        </div>
+        <div class="letter-box">
+          <div class="letter">&nbsp;</div>
+        </div>
+        <div class="letter-box">
+          <div class="letter">&nbsp;</div>
+        </div>
+        <div class="letter-box">
+          <div class="letter">&nbsp;</div>
+        </div>
+        <div class="letter-box">
+          <div class="letter">&nbsp;</div>
+        </div>
+        <div class="letter-box">
+          <div class="letter">&nbsp;</div>
+        </div>
+        <div class="letter-box">
+          <div class="letter">&nbsp;</div>
+        </div>
+        <div class="letter-box">
+          <div class="letter">&nbsp;</div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div id="numbers-game" class="letter-board-outer">
+
+      <div class="letter-board" id="letter-board">
+
+        <div id="target-number" class="option-box">
+          123
+        </div>
+        <br>
+  
+        <div class="letter-box">
+          <div class="number">&nbsp;</div>
+        </div>
+        <div class="letter-box">
+          <div class="number">&nbsp;</div>
+        </div>
+        <div class="letter-box">
+          <div class="number">&nbsp;</div>
+        </div>
+        <div class="letter-box">
+          <div class="number">&nbsp;</div>
+        </div>
+        <div class="letter-box">
+          <div class="number">&nbsp;</div>
+        </div>
+        <div class="letter-box">
+          <div class="number">&nbsp;</div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <img id="clock-hand" src="clockhand.png">
+  <script src="countdown.js"></script>
+</body>
+
 </html>

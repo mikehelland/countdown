@@ -1,18 +1,37 @@
 html, body {
     margin: 0;
     padding: 0;
+    height:100%;
+    overflow: hidden;
 }
 
+#numbers-game {
+    display:none;
+}
+
+#flex-body {
+    background-color: #548ed4;
+    display: flex;
+    flex-direction: column;
+    height:100%;
+}
 .timer {
-    width: 100%;
-    height: 800px;
+    flex-grow: 1;
 }
 
+#clock {
+    flex-grow: 1;
+    margin:auto;
+}
+#clock-hand {
+    position:absolute;
+    top:0px;
+    display: none;
+}
 .letter-board-outer {
-    position: absolute;
+    /*position: absolute;
     bottom: 0;
-    width: 100%;
-    height: 200px;
+    width: 100%;*/
     border-top: 10px solid #00163C;
     text-align: center;
     background-image: -webkit-linear-gradient(left, #4675C3 0%, #0044B3 50%, #407AE1 100%);
@@ -21,10 +40,7 @@ html, body {
 }
 
 .letter-board {
-    margin: 0 auto;
-    width: 1100px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px;
     position: relative;
     height: auto;
     background: #588FBC;
@@ -35,10 +51,8 @@ html, body {
 .letter-box {
     font-weight: 700;
     text-transform: uppercase;
-    width: 105px;
-    height: 110px;
     font-family: sans-serif;
-    font-size: 5em;
+    font-size: 1.5em;
     vertical-align: top;
     background: #034595;
     text-align: center;
@@ -50,7 +64,33 @@ html, body {
     color: white;
 }
 
-.letter {
+.option-box {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    vertical-align: top;
+    background: #034595;
+    text-align: center;
+    margin: 5px;
+    clear: both;
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: white;
+    display: inline-block;
     vertical-align: middle;
-    padding-top: 10px;
+    padding: 10px;
+    cursor:pointer;
+}
+
+.letter {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px;
+    width:40px;
+}
+
+.number {
+    padding: 10px;
+    width:50px;
 }

@@ -29,30 +29,68 @@ function getRandomVowel() {
     return vowelsArray[rand];
 }
 
-new Vue({
-    el: '#letter-board',
-    data: {
-        letters: []
-    },
-    methods: {
-        reset: function () {
-            this.letters = [];
-        },
-        add: function (type) {
-            if (this.letters.length >= 9) {
-                return;
-            }
-            switch (type) {
-                case 'consonant':
-                    this.letters.push(getRandomConsonant());
-                    break;
-                case 'vowel':
-                    this.letters.push(getRandomVowel());
-                    break;
-                default:
-                    console.error('Add type not supported:', type);
-                    break;
-            }
-        }
+var buttons = document.getElementById("button-box")
+
+
+var letters = []
+var letterDivs = document.getElementsByClassName("letter")
+var addLetter = (l) => {
+    letterDivs[letters.length].innerHTML = l
+    letters.push(l)
+
+    if (letters.length === letterDivs.length) {
+        buttons.style.display = "none"
+        startCountdown()
     }
-});
+}
+var addVowel = () => {
+    addLetter(getRandomVowel())
+}
+var addConsonant = () => {
+    addLetter(getRandomConsonant())
+}
+
+var clockHand = document.getElementById("clock-hand")
+var clock = document.getElementById("clock")
+clockHand.style.height = clock.clientHeight + "px"
+clockHand.style.left = clock.offsetLeft + "px"
+
+document.getElementById("consonant-button").onclick = addConsonant
+document.getElementById("vowel-button").onclick = addVowel
+
+function startCountdown () {
+    clockHand.style.height = clock.clientHeight + "px"
+    clockHand.style.left = clock.offsetLeft + "px"
+    clockHand.style.display = "block"
+    clockHand.style.transform = "rotate(0deg)"
+    var deg = 0
+    var handle = setInterval(function () {
+        deg += 3
+        clockHand.style.transform = "rotate(" + deg + "deg)"
+        //clock.style.transform = "rotate(" + deg + "deg)"
+        if (deg === 180) {
+            clearInterval(handle)
+        }
+    }, 500)
+}
+
+var numbersGame = document.getElementById("numbers-game")
+var lettersGame = document.getElementById("letters-game")
+function startNumbers() {
+    var targetNumberDiv = document.getElementById("target-number")
+    lettersGame.style.display = "none"
+    numbersGame.style.display = "block"
+    targetNumberDiv.innerHTML = "click"
+
+    var numberDivs = document.getElementsByClassName("number")
+    for (var i = 0; i < numberDivs.length; i++) {
+        numberDivs[i].innerHTML = i < 2 ?
+            Math.ceil(Math.random() * 4) * 25 :
+            Math.ceil(Math.random() * 10)
+    }
+
+    targetNumberDiv.onclick = e => {
+        targetNumberDiv.innerHTML = 100 + Math.ceil(Math.random() * 800)
+        startCountdown()
+    }
+}
