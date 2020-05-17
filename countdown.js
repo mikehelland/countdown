@@ -55,8 +55,14 @@ var clock = document.getElementById("clock")
 clockHand.style.height = clock.clientHeight + "px"
 clockHand.style.left = clock.offsetLeft + "px"
 
-document.getElementById("consonant-button").onclick = addConsonant
-document.getElementById("vowel-button").onclick = addVowel
+document.getElementById("consonant-button").onclick = e => {
+    e.preventDefault()
+    addConsonant()
+}
+document.getElementById("vowel-button").onclick = e => {
+    e.preventDefault()
+    addVowel()
+}
 
 function startCountdown () {
     clockHand.style.height = clock.clientHeight + "px"
@@ -77,6 +83,7 @@ function startCountdown () {
 var numbersGame = document.getElementById("numbers-game")
 var lettersGame = document.getElementById("letters-game")
 function startNumbers() {
+    clockHand.style.display = "none"
     var targetNumberDiv = document.getElementById("target-number")
     lettersGame.style.display = "none"
     numbersGame.style.display = "block"

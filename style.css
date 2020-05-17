@@ -32,7 +32,7 @@ html, body {
     /*position: absolute;
     bottom: 0;
     width: 100%;*/
-    border-top: 10px solid #00163C;
+    border-top: 8px solid #00163C;
     text-align: center;
     background-image: -webkit-linear-gradient(left, #4675C3 0%, #0044B3 50%, #407AE1 100%);
     background-image: -o-linear-gradient(left, #4675C3 0%, #0044B3 50%, #407AE1 100%);
@@ -40,19 +40,18 @@ html, body {
 }
 
 .letter-board {
-    margin: 20px;
+    margin: 12px;
     position: relative;
     height: auto;
     background: #588FBC;
     vertical-align: top;
-    border: 8px solid #00163C;
+    border: 6px solid #00163C;
 }
 
 .letter-box {
     font-weight: 700;
     text-transform: uppercase;
     font-family: sans-serif;
-    font-size: 1.5em;
     vertical-align: top;
     background: #034595;
     text-align: center;
@@ -86,11 +85,11 @@ html, body {
 .letter {
     display: inline-block;
     vertical-align: middle;
-    padding: 10px;
-    width:40px;
+    padding: 5px;
+    width:30px;
 }
 
 .number {
-    padding: 10px;
-    width:50px;
+    padding: 5px;
+    width:40px;
 }
