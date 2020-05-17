@@ -73,8 +73,7 @@ html, body {
     margin: 5px;
     clear: both;
     display: inline-block;
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: 10px;
     color: white;
     display: inline-block;
     vertical-align: middle;
@@ -105,4 +104,8 @@ html, body {
     color:white;
     background-color: #034595;
     font-weight: 700;
+}
+
+#target-number {
+ /*   margin-bottom: 0px;*/
 }
